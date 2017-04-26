@@ -1,0 +1,90 @@
+package Network;
+
+import java.util.ArrayList;
+
+import General.CommonObject;
+import General.Constant;
+import Subgraph.*;
+public class Nodepair extends CommonObject{
+    private Layer associatedLayer=null;
+    private Node  srcNode=null;
+    private Node  desNode=null;
+    private ArrayList<LinearRoute>linearlist=null;	
+	private int   keydata=Constant.UNBALACENED;
+	private double NodepairProbability=0;
+	public double getNodepairProbability() {
+		return NodepairProbability;
+	}
+	public void setNodepairProbability(double nodepairProbability) {
+		NodepairProbability = nodepairProbability;
+	}
+	
+	
+	public Nodepair(String name, int index, String comments,Layer associatedLayer,Node srcNode,Node desNode) {
+		super(name, index, comments);
+		// TODO Auto-generated constructor stub
+		this.associatedLayer=associatedLayer;
+		this.srcNode=srcNode;
+		this.desNode=desNode;
+		this.linearlist=new ArrayList<LinearRoute>();
+		
+	}
+	public Layer getAssociatedLayer() {
+		return associatedLayer;
+	}
+	public void setAssociatedLayer(Layer associatedLayer) {
+		this.associatedLayer = associatedLayer;
+	}
+	public Node getSrcNode() {
+		return srcNode;
+	}
+	public void setSrcNode(Node srcNode) {
+		this.srcNode = srcNode;
+	}
+	public Node getDesNode() {
+		return desNode;
+	}
+	public void setDesNode(Node desNode) {
+		this.desNode = desNode;
+	}
+	public ArrayList<LinearRoute> getLinearlist() {
+		return linearlist;
+	}
+	public void setLinearlist(ArrayList<LinearRoute> linearlist) {
+		this.linearlist = linearlist;
+	}
+	public int getKeydata() {
+		return keydata;
+	}
+	public void setKeydata(int keydata) {
+		this.keydata = keydata;
+	}
+   /*
+    * add a route to the routelist;
+    */
+	public void addRoute(LinearRoute route){
+		this.linearlist.add(route);
+	}
+	/*
+	 * remove route from the linearlist;
+	 */
+	public void removeRoute(LinearRoute route){
+		this.linearlist.remove(route);
+	}
+	public void removeRoute(int index){
+		for(int i=0;i<this.linearlist.size();i++){
+			if(this.linearlist.get(i).getIndex()==index){
+				this.linearlist.remove(i);
+				break;
+			}
+		}
+	}
+	public void removeRoute(String name){
+		for(int i=0;i<this.linearlist.size();i++){
+		    if(this.linearlist.get(i).getName().equals(name)){
+		    	this.linearlist.remove(i);
+		    	break;
+		    }
+		}
+	}
+}
