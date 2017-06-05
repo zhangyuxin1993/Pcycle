@@ -38,9 +38,7 @@ public class AEofCycle {
 				linknum++;
 				
 		 }
-		 file_out_put filewrite=new file_out_put();
-		 
-//		 filewrite.filewrite("E:\\programFile\\linknum.dat", "\r\n");
+		 //		 filewrite.filewrite("E:\\programFile\\linknum.dat", "\r\n");
 //		 out.cycleoutput(nowcycle,"E:\\programFile\\linknum.dat");	
 //		 filewrite.filewrite("E:\\programFile\\linknum.dat", "      "+linknum);
 		 //计算跨接链路数
@@ -113,7 +111,7 @@ public class AEofCycle {
 		}
 		 double average=0;
 		 average=sum/cyclelist.size();
-		 System.out.println(" average ="+average);
+//		 System.out.println(" average ="+average);
 //		 file_out_put filewrite=new file_out_put();
 //		filewrite.filewrite("E:\\programFile\\AVERAGE.dat",  );
 

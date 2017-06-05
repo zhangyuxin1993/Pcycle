@@ -12,44 +12,44 @@ public class SecondProtectOut {
 	{
 		file_out_put filewrite=new file_out_put();
 		CycleOutput out =new CycleOutput();
-
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat", "\r\n");
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat","set R2["+nodepair.getName()+",");
-		out.cycleoutput(cycle,"F:\\programFile\\5node\\R2.dat");
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat",",");
+		String filename="F:\\programFile\\5node\\R2.dat";
+		filewrite.filewrite(filename, "\r\n");
+		filewrite.filewrite(filename,"set R2["+nodepair.getName()+",");
+		out.cycleoutput(cycle,filename);
+		filewrite.filewrite(filename,",");
 		for(int pro=0;pro<protect1.size()-1;pro++){
-			filewrite.filewrite("F:\\programFile\\5node\\R2.dat", protect1.get(pro).getName());
-			filewrite.filewrite("F:\\programFile\\5node\\R2.dat", "-");
+			filewrite.filewrite(filename, protect1.get(pro).getName());
+			filewrite.filewrite(filename, "-");
 		}
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat", protect1.get(protect1.size()-1).getName());
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat", "]:=");
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat", "\r\n");
+		filewrite.filewrite(filename, protect1.get(protect1.size()-1).getName());
+		filewrite.filewrite(filename, "]:=");
+		filewrite.filewrite(filename, "\r\n");
 		for(int pro=0;pro<protect2.size()-1;pro++){
-			filewrite.filewrite("F:\\programFile\\5node\\R2.dat", protect2.get(pro).getName());
-			filewrite.filewrite("F:\\programFile\\5node\\R2.dat", "-");
+			filewrite.filewrite(filename, protect2.get(pro).getName());
+			filewrite.filewrite(filename, "-");
 		}
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat", protect2.get(protect2.size()-1).getName());
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat", ";");
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat", "\r\n");
+		filewrite.filewrite(filename, protect2.get(protect2.size()-1).getName());
+		filewrite.filewrite(filename, ";");
+		filewrite.filewrite(filename, "\r\n");
 //		******************第二保护输出
 		
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat","set R2["+nodepair.getName()+",");
-		out.cycleoutput(cycle,"F:\\programFile\\5node\\R2.dat");
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat",",");
+		filewrite.filewrite(filename,"set R2["+nodepair.getName()+",");
+		out.cycleoutput(cycle,filename);
+		filewrite.filewrite(filename,",");
 		for(int pro=0;pro<protect2.size()-1;pro++){
-			filewrite.filewrite("F:\\programFile\\5node\\R2.dat", protect2.get(pro).getName());
-			filewrite.filewrite("F:\\programFile\\5node\\R2.dat", "-");
+			filewrite.filewrite(filename, protect2.get(pro).getName());
+			filewrite.filewrite(filename, "-");
 			
 		}
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat", protect2.get(protect2.size()-1).getName());
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat", "]:=");
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat", "\r\n");
+		filewrite.filewrite(filename, protect2.get(protect2.size()-1).getName());
+		filewrite.filewrite(filename, "]:=");
+		filewrite.filewrite(filename, "\r\n");
 		for(int pro=0;pro<protect1.size()-1;pro++){
-			filewrite.filewrite("F:\\programFile\\5node\\R2.dat", protect1.get(pro).getName());
-			filewrite.filewrite("F:\\programFile\\5node\\R2.dat", "-");
+			filewrite.filewrite(filename, protect1.get(pro).getName());
+			filewrite.filewrite(filename, "-");
 		}
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat", protect1.get(protect1.size()-1).getName());
-		filewrite.filewrite("F:\\programFile\\5node\\R2.dat", ";");
+		filewrite.filewrite(filename, protect1.get(protect1.size()-1).getName());
+		filewrite.filewrite(filename, ";");
 	}
 
 }

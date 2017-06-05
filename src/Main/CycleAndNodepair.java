@@ -27,7 +27,8 @@ public class CycleAndNodepair {
 	
 	public  void cycleandnodepair(Layer layer,ArrayList<Cycle> cyclelist)
 	{
-		ArrayList<String> count=new ArrayList<String>();
+		
+		String filename= "F:\\programFile\\5node\\R1.dat";
 		HashMap<String, LinearRoute> nodepair_workroute=Main.nodepair_workroute;
 		
 		file_out_put filewrite=new file_out_put();
@@ -119,11 +120,11 @@ public class CycleAndNodepair {
 
 						datafile=null;
 						
-						filewrite.filewrite("F:\\programFile\\5node\\R1.dat", "\r\n");
-						filewrite.filewrite("F:\\programFile\\5node\\R1.dat","set R1["+protectNodepair.getName()+",");
-						out.cycleoutput(inputcycle,"F:\\programFile\\5node\\R1.dat");						
-						filewrite.filewrite("F:\\programFile\\5node\\R1.dat","] :=");
-						filewrite.filewrite("F:\\programFile\\5node\\R1.dat", "\r\n");
+						filewrite.filewrite(filename, "\r\n");
+						filewrite.filewrite(filename,"set R1["+protectNodepair.getName()+",");
+						out.cycleoutput(inputcycle,filename);						
+						filewrite.filewrite(filename,"] :=");
+						filewrite.filewrite(filename, "\r\n");
 										
 					//输出保护路径
 						int x=m-1;
@@ -135,7 +136,7 @@ public class CycleAndNodepair {
 								break;	
 							}
 							x++;
-							filewrite.filewrite("F:\\programFile\\5node\\R1.dat", inputcycle.getNodelist().get(x).getName());
+							filewrite.filewrite(filename, inputcycle.getNodelist().get(x).getName());
 //							System.out.print(inputcycle.getNodelist().get(x).getName());
 							protect1.add(inputcycle.getNodelist().get(x));
 							if(x==inputcycle.getNodelist().size()-1) 
@@ -146,30 +147,30 @@ public class CycleAndNodepair {
 							 }
 							if(x!=i)
 							{
-							filewrite.filewrite("F:\\programFile\\5node\\R1.dat", "-");	
+							filewrite.filewrite(filename, "-");	
 //							System.out.print("-");
 							}
 							
 						}
 						while(x!=i);
-//						filewrite.filewrite("F:\\programFile\\5node\\R1.dat", ";");
-						filewrite.filewrite("F:\\programFile\\5node\\R1.dat", "\r\n");
+//						filewrite.filewrite(filename, ";");
+						filewrite.filewrite(filename, "\r\n");
 						
 						 protect2.clear();
 							for(int n=i;n<=m;n++)
 							{
 								
-								filewrite.filewrite("F:\\programFile\\5node\\R1.dat", inputcycle.getNodelist().get(n).getName());
+								filewrite.filewrite(filename, inputcycle.getNodelist().get(n).getName());
 //								System.out.print(inputcycle.getNodelist().get(n).getName());
 								protect2.add(inputcycle.getNodelist().get(n));
 							if(n!=m)
 								{
 //									System.out.print("-");
-									filewrite.filewrite("F:\\programFile\\5node\\R1.dat", "-");
+									filewrite.filewrite(filename, "-");
 								
 								}	
 							}
-							filewrite.filewrite("F:\\programFile\\5node\\R1.dat", ";");
+							filewrite.filewrite(filename, ";");
 							nodepair_protectroute2.put(protectNodepair.getName()+inputcycle.toString(), protect2);//节点对与保护路径放入
 							
 							//第二保护输出

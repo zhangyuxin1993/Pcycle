@@ -20,27 +20,17 @@ public class CycleOutput {
 			{
 				
 				filewrite.filewrite(filename, Newnode.getName());
-			
-//				System.out.print(Newnode.getName());
-				
 				if(Newnode.getName()==CycleContain.getNodelist().get(0).getName()&&m==0)
 				{
 					filewrite.filewrite(filename, "-");
-//					System.out.print("-");
-				
 				}
 				if(Newnode.getName()!=CycleContain.getNodelist().get(0).getName())
 				{	
-//					System.out.print("-");
 				 filewrite.filewrite(filename, "-");
-			
 				}
 				m=1;
 			}
-			
 			filewrite.filewrite(filename, "\r\n");
-	
-//			System.out.println();
 		}
 	}
 	public  void cycleoutput(Cycle CycleContain,String filename)
@@ -52,22 +42,15 @@ public class CycleOutput {
 			{
 				
 				filewrite.filewrite(filename, Newnode.getName());
-//				System.out.print(Newnode.getName());
 				if(Newnode.getName()==CycleContain.getNodelist().get(0).getName()&&m==0)
 				{
-//					System.out.print("-");
 				filewrite.filewrite(filename, "-");
 				}
 				if(Newnode.getName()!=CycleContain.getNodelist().get(0).getName())
 				{	
-//					System.out.print("-");
 				filewrite.filewrite(filename, "-");}
 				m=1;
 			}
-			
-			
-//			filewrite.filewrite(filename, "\r\n");
-//			System.out.println();
 		}
 	}
 	

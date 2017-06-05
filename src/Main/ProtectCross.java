@@ -25,7 +25,6 @@ public class ProtectCross {
 		String filename="F:\\programFile\\5node\\FFCorss.dat";
 		ArrayList<Node> protect1=new ArrayList<Node>();
 		ArrayList<Node> protect2=new ArrayList<Node>();
-		HashMap<String, String> nodepair_serialNumber=Main.nodepair_serialNumber;
 		HashMap<String, LinearRoute> nodepair_workroute=Main.nodepair_workroute;
 		Layer layer=Main.mylayer;
 		file_out_put filewrite=new file_out_put();

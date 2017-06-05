@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import General.file_out_put;
+import General.random;
 import Network.Layer;
 import Network.Link;
 import Network.Node;
@@ -18,6 +19,10 @@ public class NewNodepair {
 
 	public  void newnodepair(Nodepair nodepair,ArrayList<Cycle> cyclelist,Layer layer,HashMap<String, LinearRoute> nodepair_workroute)
 	{
+		
+		String filename1="F:\\programFile\\5node\\ProtectCycle.dat";
+		String filename2="F:\\programFile\\5node\\nodepair.dat";
+		String filename3="F:\\programFile\\5node\\trafficDemand.dat";
 //		System.out.println("执行：");
 		int have=0;
 		LinearRoute newRoute=new LinearRoute(null, 0, null, 0);
@@ -83,20 +88,21 @@ public class NewNodepair {
 					if(noprotect==0&&have==0){
 						 display=1;
 //						 System.out.println("attention!!!!");
-						filewrite.filewrite("F:\\programFile\\5node\\ProtectCycle.dat", "set ProtectCycle["+nodepair.getName()+"] :=");
-						filewrite.filewrite("F:\\programFile\\5node\\ProtectCycle.dat", "\r\n");	
-						filewrite.filewrite("F:\\programFile\\5node\\nodepair.dat", nodepair.getName());	
-						filewrite.filewrite("F:\\programFile\\5node\\trafficDemand.dat", nodepair.getName());	
-						
-						filewrite.filewrite("F:\\programFile\\5node\\nodepair.dat", "\r\n");	
-						
-						
+						filewrite.filewrite(filename1, "set ProtectCycle["+nodepair.getName()+"] :=");
+						filewrite.filewrite(filename1, "\r\n");	
+						filewrite.filewrite(filename2, nodepair.getName());	
+						filewrite.filewrite(filename3, nodepair.getName()+"     ");
+						random r=new random();
+						int demand=r.Num_random(1, 49)[0]+1;//平均demand为25 
+						filewrite.filewrite(filename3, demand);
+//						filewrite.filewrite(filename3, "\r\n");	
+						filewrite.filewrite(filename2, "\r\n");	
 					}
 					if(noprotect==0)//若没有冲突则输出节点对 环 与两条路径
 					{
 						have=1;
-						out.cycleoutput(cycle, "F:\\programFile\\5node\\ProtectCycle.dat");
-						filewrite.filewrite("F:\\programFile\\5node\\ProtectCycle.dat", "\r\n");	
+						out.cycleoutput(cycle, filename1);
+						filewrite.filewrite(filename1, "\r\n");	
 
 //					System.out.println("输入节点的名字  "+nodepair.getName());
 //					System.out.println("位置："+first+"   "+second);
@@ -109,8 +115,8 @@ public class NewNodepair {
 		}
 		if(display==1){
 			display=0;
-			filewrite.filewrite("F:\\programFile\\5node\\ProtectCycle.dat", ";");	
-		    filewrite.filewrite("F:\\programFile\\5node\\ProtectCycle.dat", "\r\n");	
+			filewrite.filewrite(filename1, ";");	
+		    filewrite.filewrite(filename1, "\r\n");	
 		}
 	}
 }
